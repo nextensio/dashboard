@@ -18,6 +18,43 @@ limitations under the License.
          [hidden]="isHidden()">
   <div title
        fxLayout="row"
+       >Nextensio Extenders</div>
+
+  <div content>
+    <table>
+        <thead>
+            <th>Users</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="text" (change)="userChangeEvent($event)" />
+    <br>
+
+    <table>
+        <thead>
+            <th>Services</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let service of services">
+                <td>{{service}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="text" (change)="serviceChangeEvent($event)" />
+    <br>
+    <button type="button" class="btn btn-primary" (click)="nxtAdd()">Update</button>
+
+  </div>
+</kd-card>
+
+<kd-card role="table"
+         [hidden]="isHidden()">
+  <div title
+       fxLayout="row"
        i18n>Ingresses</div>
   <div description><span class="kd-muted-light"
           i18n>Items:&nbsp;</span>{{totalItems}}</div>
